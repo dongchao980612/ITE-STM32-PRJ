@@ -1,10 +1,9 @@
 #include "stm32f10x.h"                  // Device header
 #include "pwm.h"
 
-
-/*
-	@brief : 初始化PWM
-*/
+/**
+	*	@brief : 初始化PWM
+	*/
 void PWM_Init(void)
 {
     //  开 GPIOA 时钟(APB2) 与 TIM2 时钟(APB1)
@@ -15,7 +14,7 @@ void PWM_Init(void)
     GPIO_InitTypeDef GPIO_InitStructure;
 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; //复用推挽输出
-    GPIO_InitStructure.GPIO_Pin = PWM_PIN;		//或者 GPIO_Pin_15;
+    GPIO_InitStructure.GPIO_Pin = PWM_PIN;		
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 
     GPIO_Init(PWM_PORT_GPIO, &GPIO_InitStructure);
@@ -51,9 +50,10 @@ void PWM_Init(void)
     TIM_Cmd(PWM_TIMER2_INSTANCE, ENABLE);
 }
 
-/*
-	@brief : 动态修改占空比
-*/
+/**
+	*	@brief : 动态修改占空比
+	* @param  
+	*/
 void PWM_SetCompare1(uint16_t Compare)
 {
     TIM_SetCompare1(PWM_TIMER2_INSTANCE, Compare);

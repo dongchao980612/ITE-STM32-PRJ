@@ -3,19 +3,19 @@
 #include "i2c.h"
 
 
-extern I2CCfg_t g_i2cCfg;
+
 
 
 void My_I2C_W_SCL(uint8_t  status)
 {
-	GPIO_WriteBit(g_i2cCfg.sclPort, g_i2cCfg.sclPin, (BitAction)status);
+	GPIO_WriteBit(I2C_SCL_PORT, I2C_SCL_PIN, (BitAction)status);
 
 }
 
 
 void My_I2C_W_SDA(uint8_t  status)
 {
-	GPIO_WriteBit(g_i2cCfg.sdaPort, g_i2cCfg.sdaPin, (BitAction)status);
+	GPIO_WriteBit(I2C_SDA_PORT, I2C_SDA_PIN, (BitAction)status);
 
 }
 
@@ -23,18 +23,18 @@ void My_I2C_W_SDA(uint8_t  status)
 /*引脚初始化*/
 void My_I2C_Init(void)
 {
-    RCC_APB2PeriphClockCmd(g_i2cCfg.sdaClock, ENABLE);
-    RCC_APB2PeriphClockCmd(g_i2cCfg.sclClock, ENABLE);
+    RCC_APB2PeriphClockCmd(I2C_SCL_CLK, ENABLE);
+    RCC_APB2PeriphClockCmd(I2C_SDA_CLK, ENABLE);
 
     GPIO_InitTypeDef GPIO_InitStructure;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 
-    GPIO_InitStructure.GPIO_Pin = g_i2cCfg.sdaPin;
-    GPIO_Init(g_i2cCfg.sdaPort, &GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Pin = I2C_SDA_PIN;
+    GPIO_Init(I2C_SDA_PORT, &GPIO_InitStructure);
 
-    GPIO_InitStructure.GPIO_Pin = g_i2cCfg.sclPin;
-    GPIO_Init(g_i2cCfg.sclPort, &GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Pin = I2C_SCL_PIN;
+    GPIO_Init(I2C_SCL_PORT, &GPIO_InitStructure);
 
     My_I2C_W_SCL(1);
     My_I2C_W_SDA(1);
@@ -43,8 +43,6 @@ void My_I2C_Init(void)
 
 /**
   * @brief  I2C开始
-  * @param  无
-  * @retval 无
   */
 void My_I2C_Start(void)
 {
@@ -56,8 +54,6 @@ void My_I2C_Start(void)
 
 /**
   * @brief  I2C停止
-  * @param  无
-  * @retval 无
   */
 void My_I2C_Stop(void)
 {
@@ -69,7 +65,6 @@ void My_I2C_Stop(void)
 /**
   * @brief  I2C发送一个字节
   * @param  Byte 要发送的一个字节
-  * @retval 无
   */
 void My_I2C_SendByte(uint8_t Byte)
 {

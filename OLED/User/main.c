@@ -4,22 +4,6 @@
 #include "oled.h"
 
 
-I2CCfg_t g_i2cCfg =
-{
-    /* SCL Pin*/
-    RCC_APB2Periph_GPIOB,
-    GPIO_Pin_7,
-    GPIOB,
-
-    /* SDA Pin */
-    RCC_APB2Periph_GPIOB,
-    GPIO_Pin_8,
-    GPIOB,
-};
-
-
-
-
 int main()
 {
     OLED_Init();

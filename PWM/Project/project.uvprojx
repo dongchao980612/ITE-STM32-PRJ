@@ -666,16 +666,6 @@
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
-              <FileName>Led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Hardware\Led.c</FilePath>
-            </File>
-            <File>
-              <FileName>Led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Hardware\Led.h</FilePath>
-            </File>
-            <File>
               <FileName>PWM.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware\PWM.c</FilePath>
