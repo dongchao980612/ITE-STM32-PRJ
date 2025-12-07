@@ -3,13 +3,12 @@
 
 #include "stm32f10x.h"                  // Device header
 
-
 typedef enum
 {
     LEDMode_OFF = 0,
     LEDMode_ON = 1,
-} LEDMode_TypeDef;
 
+} LEDMode_TypeDedf;
 
 #define LED_PORT 	GPIOB
 #define LED_CLK 	RCC_APB2Periph_GPIOB

@@ -9,10 +9,13 @@ int main()
 	
     while (1)
     {
-			Led_On();
+			// Led_On();
+			// Delay_ms(500);
+			
+			// Led_Off();
+			// Delay_ms(500);
+			Led_Turn();
 			Delay_ms(500);
 			
-			Led_Off();
-			Delay_ms(500);
     }
 }

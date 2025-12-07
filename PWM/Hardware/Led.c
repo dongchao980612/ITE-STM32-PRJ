@@ -33,9 +33,6 @@ void Led_Off(void)
     GPIO_ResetBits(LED_PORT, LED_PIN);
 }
 
-/*
-	@brief : ·­×ªLED
-*/
 void Led_Turn()
 {
     if(GPIO_ReadOutputDataBit(LED_PORT, LED_PIN) == LEDMode_ON)
