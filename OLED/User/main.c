@@ -3,7 +3,6 @@
 #include "i2c.h"
 #include "oled.h"
 
-
 int main()
 {
     OLED_Init();
