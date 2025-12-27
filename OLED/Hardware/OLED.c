@@ -3,21 +3,8 @@
 #include "i2c.h"
 #include "oled_font.h"
 
-static void delay_ms_oled(uint32_t ms)
-{
-    uint32_t i, j;
-
-    for (i = 0; i < ms; i++)
-        for (j = 0; j < 10000; j++)
-            ;
-}
-
 void OLED_Init(void)
 {
-
-    // 硬件复位延时
-    delay_ms_oled(100);
-
     // 初始化I2C硬件
     My_I2C_Init(); // 端口初始化
 
