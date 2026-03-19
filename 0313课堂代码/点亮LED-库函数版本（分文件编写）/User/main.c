@@ -12,10 +12,12 @@ int main()
     while (1)
     {
         Led_On();  // œ®√
-        Delay_ms(500);
-        Led_On();  // µ„¡¡
-        Delay_ms(500);
+        Delay_ms(1000);
+        Led_Off();  // µ„¡¡
+        Delay_ms(1000);
     }
 
 
 }
+
+

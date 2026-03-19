@@ -12,17 +12,15 @@ int main()
     Key_Init();
 
     while (1)
-    {
+		{
         if(Key_GetValue() == PRESSED)
         {
             Led_On();    // µãÁÁ
         }
         else
         {
-            Led_On();  // Ï¨Ãð
+            Led_Off();  	// Ï¨Ãð
         }
-
     }
-
 
 }

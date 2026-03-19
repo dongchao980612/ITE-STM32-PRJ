@@ -17,9 +17,9 @@ int main()
 
     while (1)
     {
-        GPIO_SetBits(GPIOC, GPIO_Pin_13);;  // Ï¨Ãð
+        GPIO_SetBits(GPIOC, GPIO_Pin_13); // Ï¨Ãð
         Delay_ms(500);
-        GPIO_ResetBits(GPIOC, GPIO_Pin_13);;  // µãÁÁ
+        GPIO_ResetBits(GPIOC, GPIO_Pin_13);  // µãÁÁ
         Delay_ms(500);
     }
 }

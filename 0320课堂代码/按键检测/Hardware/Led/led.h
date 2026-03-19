@@ -5,7 +5,7 @@
 
 #define LED_PORT 	GPIOC
 #define LED_CLK 	RCC_APB2Periph_GPIOC
-#define LED_PIN   GPIO_Pin_3
+#define LED_PIN   GPIO_Pin_13
 
 
 void Led_Init(void);
