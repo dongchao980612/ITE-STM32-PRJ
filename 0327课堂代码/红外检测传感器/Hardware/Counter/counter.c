@@ -19,10 +19,10 @@ void Counter_Init(void)
     // 步骤3：AFIO映射 - PB11关联到EXTI11线
     GPIO_EXTILineConfig(COUNTER_AFIO_PORT, COUNTER_AFIO_PIN);
 
-    // 步骤4：配置EXTI中断线（核心：下降沿触发）
+    // 步骤4：配置EXTI中断线
     EXTI_InitTypeDef EXTI_InitStructure;
     EXTI_InitStructure.EXTI_Line = COUNTER_EXIT_LINE;          
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising; // 来人=下降沿，没人=上升沿
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling; // 来人=下降沿，没人=上升沿
     EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;             // 中断模式
     EXTI_InitStructure.EXTI_LineCmd = ENABLE;                       // 使能中断线
     EXTI_Init(&EXTI_InitStructure);

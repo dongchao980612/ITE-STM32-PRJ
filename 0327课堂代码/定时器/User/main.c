@@ -21,9 +21,9 @@ int main()
 
 void TIM2_IRQHandler(void)
 {
-    if(TIM_GetITStatus(TIMER2_INSTANCE, TIM_IT_Update) == SET)
+    if(TIM_GetITStatus(TIMER_INSTANCE, TIM_IT_Update) == SET)
     {
         Led_Turn();
-        TIM_ClearITPendingBit(TIMER2_INSTANCE, TIM_IT_Update);
+        TIM_ClearITPendingBit(TIMER_INSTANCE, TIM_IT_Update);
     }
 }
