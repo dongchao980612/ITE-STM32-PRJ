@@ -1,5 +1,4 @@
 #include "led.h"
-#include "delay.h"
 
 void Led_Init(void)
 {
@@ -13,9 +12,9 @@ void Led_Init(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 
     GPIO_Init(LED_PORT, &GPIO_InitStructure);
-
-    GPIO_SetBits(LED_PORT, LED_PIN);
-
+	
+		GPIO_SetBits(LED_PORT, LED_PIN);
+	
 }
 
 void Led_On(void)
@@ -29,12 +28,3 @@ void Led_Off(void)
 }
 
 
-void Led_Turn()
-{
-    Led_On();
-    Delay_ms(500);
-
-    Led_Off();
-    Delay_ms(500);
-
-}
