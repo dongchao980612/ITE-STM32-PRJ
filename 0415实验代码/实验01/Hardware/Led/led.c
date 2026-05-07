@@ -10,11 +10,11 @@ void Led_Init(void)
     GPIO_InitStructure.GPIO_Pin =  LED_PIN;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-
+		
+		// 步骤3：初始化结构体
     GPIO_Init(LED_PORT, &GPIO_InitStructure);
 	
 		GPIO_SetBits(LED_PORT, LED_PIN);
-	
 }
 
 

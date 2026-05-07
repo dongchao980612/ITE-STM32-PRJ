@@ -13,9 +13,9 @@ void Key_Init(void)
     GPIO_InitStructure.GPIO_Pin =  KEY_PIN;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//  上拉输入模式
-
+	
+		// 步骤3：初始化结构体
     GPIO_Init(KEY_PORT, &GPIO_InitStructure);
-
 }
 
 KeyStatus Key_GetValue(void)

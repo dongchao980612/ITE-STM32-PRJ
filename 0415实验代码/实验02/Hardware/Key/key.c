@@ -39,8 +39,6 @@ void Key_Init(void)
     NVIC_InitStruct.NVIC_IRQChannelSubPriority = 2;
     NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStruct);
-
-
 }
 
 KeyStatus Key_GetValue(void)

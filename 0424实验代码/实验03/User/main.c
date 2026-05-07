@@ -37,7 +37,7 @@ int main()
         }
 
         OLED_ShowNum(2, 5, TIM_GetCounter(TIMER_INSTANCE), 5);
-        OLED_ShowNum(3, 5, cnt, 5);
+        OLED_ShowNum(3, 5, sec, 5);
 
     }
 
